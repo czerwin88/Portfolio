@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans")
+
+$font: "Open Sans", serif
+$primary-color: #313234
+$icon-color: #7E9FED
+$text-color: #fff
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0 auto
+  font-family: 'Open Sans', serif
+
+=grid($prefix, $columns: 12)
+  @for $i from 1 through $columns
+    $size: floor((100% / ($columns / $i)) * 100) / 100
+    .#{$prefix}-#{$i}
+      width: $size
+    .#{$prefix}-offset-#{$i}
+      margin-left: $size
+
+=background($position, $size)
+  background-position: $position
+  background-size: $size
+
+=size($height, $width)
+  height: $height
+  width: $width
+
++grid('col')
+
+.container
+  margin: auto
+
+section.container
+  margin-bottom: 50px
+
+.row
+  &:before, &:after
+    content: ""
+    display: table
+    clear: both
+
+[class*="col-"]
+  padding: 20px
+  float: left
+
+nav
+  width: 100%
+  position: fixed
+  min-height: 50px
+  text-transform: uppercase
+  a
+    color: white
+    text-decoration: none
+    display: block
+  ul
+    background-color: rgb(0, 0, 0)
+    padding: 0
+    margin-top: 0
+  li
+    display: inline-block
+    height: 50px
+    line-height: 50px
+    width: 200px
+    text-align: center
+  ul ul li
+    display: block
+  li:hover
+    background-color: rgba(92,85,85,0.5)
+    ul
+      display: none
+  ul li:hover ul
+    display: block
+  li ul
+    display: none
+    position: absolute
+
+.personal
+  text-align: center
+  font-size: 24px
+  text-shadow: 10px
+  ul
+    list-style-type: none
+
+.experience
+  text-align: justify
+  font-size: 24px
