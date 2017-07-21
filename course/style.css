@@ -111,7 +111,7 @@ body {
 }
 
 [class*="col-"] {
-  padding: 10px;
+  padding: 0 20px;
   float: left;
 }
 

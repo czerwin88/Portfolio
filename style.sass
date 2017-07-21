@@ -1,16 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans")
 
 $font: "Open Sans", serif
-$primary-color: #313234
-$icon-color: #7E9FED
 $text-color: #fff
 
 *
   box-sizing: border-box
 
 body
-  margin: 0 auto
-  font-family: 'Open Sans', serif
+  margin: 0
+  font-family: $font
 
 =grid($prefix, $columns: 12)
   @for $i from 1 through $columns
@@ -20,21 +18,7 @@ body
     .#{$prefix}-offset-#{$i}
       margin-left: $size
 
-=background($position, $size)
-  background-position: $position
-  background-size: $size
-
-=size($height, $width)
-  height: $height
-  width: $width
-
 +grid('col')
-
-.container
-  margin: auto
-
-section.container
-  margin-bottom: 50px
 
 .row
   &:before, &:after
@@ -43,16 +27,16 @@ section.container
     clear: both
 
 [class*="col-"]
-  padding: 20px
+  padding: 10px
   float: left
 
 nav
   width: 100%
-  position: fixed
-  min-height: 50px
+  line-height: 50px
   text-transform: uppercase
+  text-align: right
   a
-    color: white
+    color: $text-color
     text-decoration: none
     display: block
   ul
@@ -61,8 +45,6 @@ nav
     margin-top: 0
   li
     display: inline-block
-    height: 50px
-    line-height: 50px
     width: 200px
     text-align: center
   ul ul li
@@ -77,15 +59,30 @@ nav
     display: none
     position: absolute
 
+section.container
+  margin: 0 auto
+
 .personal
-  text-align: center
-  font-size: 24px
-  text-shadow: 10px
+  font-size: 12px
+  background-color: rgb(30.2, 29.4, 33.3)
+  color: $text-color
   ul
     list-style-type: none
+    li
+      padding-bottom: 10px
+  img
+    width: 186px
+    height: 240px
+  i
+    padding-right: 5px
 
 .experience
-  text-align: justify
-  font-size: 24px
-  h3
+  font-size: 14px
+  h3, h1
     text-align: center
+  ul
+    list-style-type: none
+    li
+      padding-bottom: 10px
+  i
+    padding-right: 5px
