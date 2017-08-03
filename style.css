@@ -6,6 +6,7 @@
 body {
   margin: 0;
   font-family: "Open Sans", serif;
+  overflow: hidden;
 }
 
 .col-1 {
@@ -117,11 +118,10 @@ body {
 
 section.container {
   margin: 0 auto;
-  padding: 0;
 }
 
 .personal {
-  font-size: 11.5px;
+  font-size: 11.7px;
   background-color: #1e1d21;
   color: #fff;
 }
@@ -157,6 +157,7 @@ section.container {
 
 .left ul li {
   padding-bottom: 5px;
+  padding-top: 0;
 }
 
 .left i {
